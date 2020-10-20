@@ -1,0 +1,33 @@
+<html>
+<head>
+      <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>Trips I've Taken</h1>
+
+    <form method="POST" action="/index">
+        <input type="text" placeholder = "Title" name="title" />
+        <input type="text" placeholder = "Image Url" name="imageUrl" />
+        <input type="text" placeholder = "Departure Date" name="departureDate" />
+        <input type="text" placeholder = "Return Date" name="returnDate" />
+        <button name="addTripButton">Add Trip</button>
+    </form>
+
+    <ul>
+    {{#allTrips}} 
+    <form method="POST" action="/delete-trip">
+    <li>
+        <b>Place:</b> {{title}} <b>Depature Date:</b> {{departureDate}} <b>Return Date:</b> {{returnDate}} <input type="hidden" name="deleteTrip" value="{{title}}"/><button type="submit" name="deleteButton">Delete Trip</button>
+        <br>
+        <img name="image" src = "{{imageUrl}}" width="300px" height="200px"/>
+    </li>
+    {{/allTrips}}
+    {{^allTrips}}
+        <h3>No trips taken. Time to plan a getaway!!!</h3>
+     {{/allTrips}}
+    </ul>
+    </form>
+
+</body>
+</html>
