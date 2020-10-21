@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/movies.css" />
+    </head>
+
+    <body>
+        <h1>MOVIES</h1>
+    <form method="POST" action="/movies/create-movie">
+        <input type="text" placeholder="title" name="title" />
+        <input type="text" placeholder="description" name="description" />
+        <input type="text" placeholder="genre" name="genre" />
+        <input type="text" placeholder="posterURL" name="posterURL" />
+        <button name="addMovieButton">Add Movie</button>
+    </form>
+    <label><input type="text" placeholder="genre" name="genre" /><button name="searchMoviesButton">Search Movies</button></label>
+
+    <ul>
+    {{#allMovies}}
+        <form method="POST" action="/movies/delete-movie">
+        <li>
+        <input type="hidden" value={{movieId}} name="movieId" />
+          <label>{{title}} - {{genre}} - {{description}}</label>
+          <img name="image" src = "{{imageUrl}}" width="300px" height="200px"/>
+          <button>Delete Movie</button>
+        </li>
+        </form>
+    {{/allMovies}}
+    {{^allMovies}}
+        <h3>No movies to display. Add a movie!!!</h3>
+     {{/allMovies}}
+
+    </ul>
+    <ul>
+
+    {{#allMovies}}
+        <form method="POST" action="/movies/filter-movie">
+        <li>
+        <input type="hidden" value={{movieId}} name="movieId" />
+          <label>{{title}} - {{genre}} - {{description}}</label>
+          <img name="image" src = "{{imageUrl}}" width="300px" height="200px"/>
+        </li>
+        </form>
+    {{/allMovies}}
+    {{^allMovies}}
+        <h3>No movies within this genre to display.</h3>
+     {{/allMovies}}
+
+    </ul>
+
+
+    </body>
+</html>
