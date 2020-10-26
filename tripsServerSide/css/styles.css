@@ -71,6 +71,11 @@ button[name="registerButton"] {
     justify-content: center;
 }
 
+.registerAcct {
+    display: flex;
+    justify-content: center;
+}
+
 .loginInBar {
     display: flex;
     justify-content: center;

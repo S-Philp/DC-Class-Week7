@@ -5,14 +5,18 @@
 
     <body>
         <h1>Trips Login Page</h1>
+        
         <form method="POST" action="/login">
         <div class="loginInBar">
         <input type="text" placeholder="Username" name="username" />
         <input type="password" placeholder="Password" name="password" />
         <button name="loginButton">Login</button>
-        </div>
         </form>
-
+        </div>
+         <div class="registerAcct">
+        <a href="/register">
+        <button name="registerButton">Register for a Trips Account</button></a>
+        </div>
 
         {{message}}
 

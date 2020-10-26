@@ -12,7 +12,7 @@
     </form>
     </div>
 
-    <form name="form1" method="POST" action="/create-trip">
+    <form name="form1" method="POST" action="/trips/create-trip">
     <div class="addTripBar">
         <input type="text" placeholder = "Title" name="title" />
         <input type="text" placeholder = "Image Url" name="imageUrl" />
@@ -24,7 +24,7 @@
 
     <ul>
     {{#allTrips}} 
-    <form name="form2" method="POST" action="/delete-trip">
+    <form name="form2" method="POST" action="/trips/delete-trip">
     <li>
         <input type="hidden" value={{tripId}} name="tripId" />
         <b>Place:</b> {{title}} <b>Depature Date:</b> {{departureDate}} <b>Return Date:</b> {{returnDate}} <input type="hidden" name="deleteTrip" value="{{title}}"/><button type="submit" name="deleteButton">Delete Trip</button>
@@ -37,7 +37,6 @@
     {{^allTrips}}
         <h3>No trips taken. Time to plan a getaway!!!</h3>
      {{/allTrips}}
-    {{! </ul> }}
 
 
 </body>
